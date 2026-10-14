@@ -168,10 +168,15 @@ def render(items: list) -> str:
     letter-spacing:.02em;text-align:center;}}
   footer a{{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);}}
   footer a:hover{{color:var(--ink);}}
+  .topnav{{max-width:660px;margin:0 auto;padding:16px 22px 0;}}
+  .topnav a{{font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    color:var(--muted);text-decoration:none;}}
+  .topnav a:hover{{color:var(--ink);}}
   @media (max-width:480px){{h1.headline{{font-size:26px;}} .wrap{{padding:30px 16px 46px;}}}}
 </style>
 </head>
 <body>
+  <nav class="topnav"><a href="/">← AlertCadence</a></nav>
   <div class="wrap">
     <div class="masthead">
       <span class="brand">{esc(MSP_NAME)}</span>
