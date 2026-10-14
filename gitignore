@@ -1,0 +1,20 @@
+# Secrets — never commit the Mongo connection string or any env file
+.env
+*.env
+
+# Local storage fallback (may contain generated data)
+storage_fallback.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS cruft
+.DS_Store
+
+# Local scratch / test files
+_test_*.py
+_sample_*.json
+_real_backup.json

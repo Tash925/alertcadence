@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Your Company] Managed IT — Weekly Security Brief</title>
+<style>
+  :root {
+    --paper:#faf8f3; --card:#ffffff; --card-2:#f6f3ec;
+    --ink:#1c2230; --ink-soft:#4a5160; --muted:#8a8f9c;
+    --line:#e7e2d7; --line-soft:#efebe1;
+    --accent:#b5792a;            /* muted amber — "attention", not alarm */
+    --accent-soft:#f3e9d7;
+    --warn:#c0392b; --warn-bg:#fbeeec; --warn-line:#eccfca;
+    --ok:#2f8f5b;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);line-height:1.62;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:660px;margin:0 auto;padding:44px 22px 60px;}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:30px;}
+  .brand{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink);font-weight:600;}
+  .logo-dim{font-family:var(--mono);font-size:11px;color:var(--muted);
+    letter-spacing:.08em;}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    color:var(--accent);text-transform:uppercase;margin:0 0 12px;font-weight:600;}
+  h1.headline{font-family:var(--serif);font-size:32px;line-height:1.15;
+    letter-spacing:-.01em;margin:0 0 12px;font-weight:600;}
+  .sub{color:var(--ink-soft);font-size:15.5px;margin:0 0 36px;max-width:60ch;}
+  .card{background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:24px;margin-bottom:18px;
+    box-shadow:0 1px 2px rgba(28,34,48,.04);}
+  .card.ransom{border-color:var(--warn-line);
+    box-shadow:0 1px 2px rgba(192,57,43,.06);}
+  .card-top{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;}
+  .num{flex:none;width:28px;height:28px;border-radius:50%;
+    background:var(--card-2);border:1px solid var(--line);color:var(--ink-soft);
+    font-family:var(--mono);font-size:13px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .num.ransom{background:var(--warn);border-color:var(--warn);color:#fff;}
+  .card-id h2{font-family:var(--serif);margin:9px 0 2px;font-size:20px;
+    letter-spacing:-.01em;font-weight:600;}
+  .tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .tag{font-family:var(--mono);font-size:10px;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--accent);background:var(--accent-soft);
+    border-radius:5px;padding:2px 7px;font-weight:600;}
+  .cve{font-family:var(--mono);font-size:12px;color:var(--muted);}
+  .flag{font-family:var(--mono);font-size:10px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--warn);background:var(--warn-bg);
+    border:1px solid var(--warn-line);border-radius:999px;padding:2px 9px;font-weight:600;}
+  .added{font-family:var(--mono);font-size:11px;color:var(--muted);margin:0;}
+  .boxes{display:flex;flex-direction:column;gap:16px;}
+  .box-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px;}
+  .box p{margin:0;font-size:15.5px;color:var(--ink);}
+  .box.doing{background:var(--card-2);border-left:2px solid var(--ok);
+    border-radius:8px;padding:13px 15px;}
+  .box.doing .box-label{color:var(--ok);}
+  .source{display:inline-block;margin-top:20px;font-family:var(--mono);
+    font-size:12.5px;letter-spacing:.02em;color:var(--accent);
+    text-decoration:none;border-bottom:1px solid var(--accent-soft);padding-bottom:2px;}
+  .source:hover{border-color:var(--accent);}
+  footer{margin-top:42px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:11px;line-height:1.9;color:var(--muted);
+    letter-spacing:.02em;text-align:center;}
+  footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);}
+  footer a:hover{color:var(--ink);}
+  @media (max-width:480px){h1.headline{font-size:26px;} .wrap{padding:30px 16px 46px;}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="masthead">
+      <span class="brand">[Your Company] Managed IT</span>
+      <span class="logo-dim">yourlogo.com</span>
+    </div>
+    <p class="kicker">Wednesday, October 14, 2026 · Security Brief</p>
+    <h1 class="headline">6 things to patch this week</h1>
+    <p class="sub">Pulled from CISA&#x27;s exploited-vulnerability feed, filtered to the software small businesses run, and rewritten in plain English.</p>
+    
+      <article class="card">
+        <div class="card-top">
+          <span class="num">1</span>
+          <div class="card-id">
+            <div class="tags">
+              <span class="tag">CISA KEV</span>
+              <span class="cve">CVE-2026-104286</span>
+              
+            </div>
+            <h2>Fortinet — FortiMail</h2>
+            <p class="added">Added 2026-10-01</p>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <span class="box-label">What happened</span>
+            <p>An attacker could potentially access files they shouldn&#x27;t have access to, potentially leading to sensitive information being compromised.</p>
+          </div>
+          <div class="box">
+            <span class="box-label">Why it matters to your business</span>
+            <p>This could allow unauthorized access to your business&#x27;s data, which could lead to financial losses, reputational damage, and legal issues.</p>
+          </div>
+          <div class="box doing">
+            <span class="box-label">What we're doing</span>
+            <p>We&#x27;re actively working to keep your FortiMail system secure by regularly patching software and monitoring for any suspicious activity.</p>
+          </div>
+        </div>
+        <a class="source" href="https://nvd.nist.gov/vuln/detail/CVE-2026-104286" target="_blank" rel="noopener">View the official advisory →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="num">2</span>
+          <div class="card-id">
+            <div class="tags">
+              <span class="tag">CISA KEV</span>
+              <span class="cve">CVE-2026-86950</span>
+              
+            </div>
+            <h2>Apple — Multiple Products</h2>
+            <p class="added">Added 2026-09-29</p>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <span class="box-label">What happened</span>
+            <p>Apple products have a flaw that lets attackers take control of the device.</p>
+          </div>
+          <div class="box">
+            <span class="box-label">Why it matters to your business</span>
+            <p>This could mean someone could access your business data or shut down your systems.</p>
+          </div>
+          <div class="box doing">
+            <span class="box-label">What we're doing</span>
+            <p>We&#x27;re staying on top of the latest updates and monitoring your systems to make sure they&#x27;re secure.</p>
+          </div>
+        </div>
+        <a class="source" href="https://nvd.nist.gov/vuln/detail/CVE-2026-86950" target="_blank" rel="noopener">View the official advisory →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="num">3</span>
+          <div class="card-id">
+            <div class="tags">
+              <span class="tag">CISA KEV</span>
+              <span class="cve">CVE-2026-65660</span>
+              
+            </div>
+            <h2>Microsoft — SharePoint</h2>
+            <p class="added">Added 2026-09-25</p>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <span class="box-label">What happened</span>
+            <p>An attacker could potentially use a system like Microsoft SharePoint to run their own commands remotely, without your knowledge.</p>
+          </div>
+          <div class="box">
+            <span class="box-label">Why it matters to your business</span>
+            <p>This means someone could potentially access your company&#x27;s data or even shut down your systems without your permission.</p>
+          </div>
+          <div class="box doing">
+            <span class="box-label">What we're doing</span>
+            <p>We&#x27;re actively monitoring your system and keeping it updated with the latest security patches to help protect it from these kinds of threats.</p>
+          </div>
+        </div>
+        <a class="source" href="https://nvd.nist.gov/vuln/detail/CVE-2026-65660" target="_blank" rel="noopener">View the official advisory →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="num">4</span>
+          <div class="card-id">
+            <div class="tags">
+              <span class="tag">CISA KEV</span>
+              <span class="cve">CVE-2026-87902</span>
+              
+            </div>
+            <h2>WordPress — Core</h2>
+            <p class="added">Added 2026-09-25</p>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <span class="box-label">What happened</span>
+            <p>An attacker could potentially use the WordPress core software to run their own commands on your business&#x27;s computer, even from far away.</p>
+          </div>
+          <div class="box">
+            <span class="box-label">Why it matters to your business</span>
+            <p>This means someone could potentially take control of your business&#x27;s computer and do whatever they wanted, like deleting important files or making changes to your website.</p>
+          </div>
+          <div class="box doing">
+            <span class="box-label">What we're doing</span>
+            <p>We&#x27;re keeping your WordPress software up-to-date and monitoring your system for any suspicious activity.</p>
+          </div>
+        </div>
+        <a class="source" href="https://nvd.nist.gov/vuln/detail/CVE-2026-87902" target="_blank" rel="noopener">View the official advisory →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="num">5</span>
+          <div class="card-id">
+            <div class="tags">
+              <span class="tag">CISA KEV</span>
+              <span class="cve">CVE-2026-71362</span>
+              
+            </div>
+            <h2>Adobe — Commerce and Magento</h2>
+            <p class="added">Added 2026-09-24</p>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <span class="box-label">What happened</span>
+            <p>An attacker could potentially use a system they have access to to run their own commands, like opening a file or deleting data, without the owner&#x27;s permission, from a distance.</p>
+          </div>
+          <div class="box">
+            <span class="box-label">Why it matters to your business</span>
+            <p>This could allow an attacker to potentially disrupt your business operations, like making your website inaccessible or deleting important customer data.</p>
+          </div>
+          <div class="box doing">
+            <span class="box-label">What we're doing</span>
+            <p>We&#x27;re actively working to keep your system secure by patching known vulnerabilities and monitoring for any suspicious activity.</p>
+          </div>
+        </div>
+        <a class="source" href="https://nvd.nist.gov/vuln/detail/CVE-2026-71362" target="_blank" rel="noopener">View the official advisory →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="num">6</span>
+          <div class="card-id">
+            <div class="tags">
+              <span class="tag">CISA KEV</span>
+              <span class="cve">CVE-2026-58704</span>
+              
+            </div>
+            <h2>Google — Pixel</h2>
+            <p class="added">Added 2026-09-16</p>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <span class="box-label">What happened</span>
+            <p>There&#x27;s a possibility that someone could take control of a Google Pixel phone without the owner&#x27;s permission.</p>
+          </div>
+          <div class="box">
+            <span class="box-label">Why it matters to your business</span>
+            <p>This means someone could potentially access sensitive information or even use the phone to cause trouble for your business.</p>
+          </div>
+          <div class="box doing">
+            <span class="box-label">What we're doing</span>
+            <p>We&#x27;re keeping your Pixel devices secure by regularly updating them and monitoring them for any unusual activity.</p>
+          </div>
+        </div>
+        <a class="source" href="https://nvd.nist.gov/vuln/detail/CVE-2026-58704" target="_blank" rel="noopener">View the official advisory →</a>
+      </article>
+    <footer>
+      Generated locally with Gemma · No data leaves your machine<br>
+      Source: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV</a> ·
+      Built with <a href="https://alertcadence.tech">AlertCadence</a> ·
+      Verify the official advisory before acting.
+    </footer>
+  </div>
+</body>
+</html>
